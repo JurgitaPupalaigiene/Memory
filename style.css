@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 35px 0;
+  background:rgb(227, 145, 243);
+}
+
+.desk {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#title{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 6em;;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(139, 42, 115);
+}
+
+.card {
+  position: relative;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+  margin: 7px;
+}
+
+.card,
+.back,
+.front {
+  height: 175px;
+  width: 125px;
+  border-radius: 15px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  background-color: rgb(165, 35, 137);
+  background-image: url('./images/kubikas.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: rgb(141, 241, 141) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.matched .front {
+background: rgb(227, 145, 243) !important;
+} 
